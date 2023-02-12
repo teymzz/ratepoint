@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratepoint</title>
+    <link rel="stylesheet" href="css/design.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/radial-themes.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <style>
+        .rate-point {
+            width: max(50%, 50vw);
+            margin: 1.5em;
+            color: white;
+        }
+        
+        .samples {
+            width: max(50%, 50vw);
+        }
+        
+        @media screen and (max-width:1000px) {
+            .samples {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mybox-full container-element">
+
+        <div class="grid-center padd-20 bc-red-dd c-white">Rate Bar Samples (Rate Line)</div>
+
+        <div class="grid-center padd-20 padd-2">
+
+            <div class="grid-center samples wid-full padd-10">
+
+                <div class="mybox-full bd bd-1">
+                    <div class="padd-x-2 padd-y-10 full-width rate-pane">
+                        <div class="mybox-full text-right font10 rate-value" data-rate="80"></div>
+                        <div class="padd-2 wid-full" style="border: solid 1px #97a6ad;">
+                            <div class="wid-full radius-inherit ">
+                                <div class="padd-1 profile-indicator rate-bar low radius-inherit"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5 padd-10">sample 1</div>
+
+                    <div class="grid-center padd-20">
+                        <span class="font12" style="color:black">
+                            Auto Update Sample:
+                            <br> 
+                            <fieldset class="i-flex">
+                                <input class="flex-child padd-x-10" id="newvalue" type="" name=""> 
+                            </fieldset>
+        
+                            <fieldset class="i-flex padd-x-10 bc bc-red-dd bh-lime-dd anc-btn-link" style="border:none;">
+                                <input class="flex-btn c-white" id="update" type="button" value="Auto Update" name=""> 
+                            </fieldset>
+                            <br>
+                            Note: (value runs between 1-100.)
+                         </span>
+                    </div>
+                </div>
+
+
+                <div class="mybox-full mg mtp10 bd bd-1">
+                    <div class="padd-x-2 padd-y-10 full-width rate-pane">
+                        <div class="mybox-full text-right font10 rate-value" data-rate="50"></div>
+                        <div class="padd-2 rad-2 wid-full flow-hide" style="border: solid 1px #417f9c;">
+                            <div class="wid-full radius-inherit ">
+                                <div class="padd-y-10 profile-indicator rate-bar low radius-inherit"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5 padd-10">sample 2</div>
+
+                    <div class="grid-center padd-20">
+                        <span class="font12" style="color:black">
+                            updated on interval basis
+                         </span>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <script src="js/ratePoint.js"></script>
+        <script>
+            setTimeout(() => {
+                $(".rate-pane").animeRateLine({
+                    runtime: 4500,
+                    breakPoints: ['0', '25', '50', '75', '100'],
+                    classes: ["blue", 'red', 'green'],
+                    colors: [
+                        'rgb(255, 0, 0) ',
+                        'rgb(230, 207, 82) ',
+                        'rgb(227, 236, 91) ',
+                        'rgb(91, 195, 236) ',
+                        'rgb(91, 236, 91) '
+                    ],
+                })
+
+
+                //Auto update sample (6) on click basis
+                $("#update").click(function() {
+
+                    let rateBar = $('.rate-pane');
+                    //let currentRate = +rateBar.find("[data-rate]").attr('data-rate');
+                    let newRate = +$("#newvalue").val();
+
+                    if (newRate < 0) {
+                        newRate = 0;
+                    }
+
+                    $(".rate-pane").find("[data-rate]").attr({
+                        "data-rate": newRate,
+                    });
+
+                    $(".rate-pane").animeRateLine({
+                        runtime: 5500,
+                        breakPoints: ['0', '25', '50', '75', '100'],
+                        colors: [
+                            'rgb(255, 0, 0) ',
+                            'rgb(230, 207, 82) ',
+                            'rgb(227, 236, 91) ',
+                            'rgb(91, 195, 236) ',
+                            'rgb(91, 236, 91) '
+                        ],
+                    });
+
+                })
+
+
+                //Running on interval basis
+
+                let rates = [20, 50, 10, 80, 5, 50, 10];
+                let currentIndex = 0;
+
+                setInterval(() => {
+
+                    if (currentIndex === (rates.length - 1)) {
+                        currentIndex = 0;
+                    } else {
+                        currentIndex++;
+                    }
+
+                    let next = rates[currentIndex];
+                    $('.rate-pane').eq(1).find('.rate-value').attr({
+                        'data-rate': next
+                    })
+                    $('.rate-pane').eq(1).animeRateLine({
+                        breakPoints: ['0', '25', '50', '75', '100'],
+                        colors: [
+                            'rgb(255, 0, 0) ',
+                            'rgb(230, 207, 82) ',
+                            'rgb(227, 236, 91) ',
+                            'rgb(91, 195, 236) ',
+                            'rgb(91, 236, 91) '
+                        ],
+                    });
+
+
+                }, 1500);
+
+
+            }, 1500);
+        </script>
+</body>
+
+</html>

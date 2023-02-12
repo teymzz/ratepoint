@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratepoint</title>
+    <link rel="stylesheet" href="css/design.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/radial-themes.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <style>
+        .rate-point {
+            width: max(120px, 15vw);
+            margin: 1.5em;
+            color: white;
+        }
+        
+        .samples {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        @media screen and (max-width:1000px) {
+            .samples {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-element">
+
+        <div class="grid-center padd-20 bc-red-dd c-white">Rate Bar Samples</div>
+
+        <div class="">
+
+            <div class="grid-center samples">
+
+                <div class="grid-center">
+                    <div id="1" class="mybox radial rate-point plans calibri bold font16">
+                        <div class=" theme-12 ">
+                            <svg id="animated " class='' data-toggle="class " viewbox="0 0 100 100 " xmlns="http://www.w3.org/2000/svg ">
+                                <circle class='no-fil' cx="50 " cy="50 " r="45 "/>
+                                <item data-func="prodata " data-start="0 " data-end="75 " 
+                                      data-mark="100 " data-unit='%' data-time="7000 " 
+                                      data-label="<span class='grid-center font8 font-all'>AutoMeter</span>" data-angle="0" data-mirror="x" data-bkpoints="0 20 50 70 100"  
+                                      data-bkclass="low normal medium high complete" data-run="auto" >
+                                    </item>
+                                <path id="1" class="bar6 cap-round" data-func="progressbar" stroke-linecap="round" stroke-dasharray="0,251.36264038085938" stroke-width="1" d="M50 10 a 30 30 0 0 1 0 80 a 30 30 0 0 1 0 -80">
+                                </path>
+                                <foreignObject data-func="protext" x="20" y="20" height="60%" width="60%" text-anchor="middle" dy="7" class="text-center"></foreignObject>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5">Sample 1</div>
+                </div>
+
+                <div class="grid-center">
+                    <div id="2" class="mybox radial rate-point plans calibri bold font16">
+                        <div class="theme-9">
+                            <svg id="animated" class='' data-toggle="class" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle class='no-fil' cx="50" cy="50" r="45"/>
+                            <item data-func="prodata" 
+                                    data-mark="100" data-start="0" data-end="100" 
+                                    data-time="5000" data-unit='%'  data-angle="" data-mirror=""
+                                    data-label="<span class='mybox font8 font-all'>Speedometer</span>"
+                                    data-bkpoints="0 20 50 70 100"
+                                    data-bkclass ="low normal medium high complete"
+                                    data-bkcolors="rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgb(207,204,4) rgba(102,45,45,0.5)">
+                            </item>
+                            <path id="1" class="bar6 cap-round" data-func="progressbar" stroke-linecap="round" stroke-dasharray="0,251.36264038085938" stroke-width="1" d="M50 10 a 30 30 0 0 1 0 80 a 30 30 0 0 1 0 -80">
+                            </path>
+                            <foreignObject data-func="protext" x="20" y="20" height="60%" width="60%" text-anchor="middle" dy="7" class="text-center"></foreignObject>
+                        </svg>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5">Sample 2</div>
+                </div>
+
+                <div class="grid-center">
+                    <div id="3" class="mybox radial rate-point plans calibri bold font16">
+                        <div class="theme-10">
+                            <svg id="animated" class='' data-toggle="class" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle class='no-fil' cx="50" cy="50" r="45"/>
+                            <item data-func="prodata" 
+                                    data-mark="100" data-start="0" data-end="100" 
+                                    data-time="5000" data-unit='%'  data-angle="" data-mirror=""
+                                    data-label="<span class='mybox-full font8 font-all'> Rate Meter </span>"
+                                    data-bkpoints="0 20 50 70 100"
+                                    data-bkclass ="low normal medium high complete"
+                                    data-bkcolors="rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgb(207,204,4) rgba(102,45,45,0.5)">
+                            </item>
+                            <path id="1" class="bar6 cap-round" data-func="progressbar" stroke-linecap="round" stroke-dasharray="0,251.36264038085938" stroke-width="1" d="M50 10 a 30 30 0 0 1 0 80 a 30 30 0 0 1 0 -80">
+                            </path>
+                            <foreignObject data-func="protext" x="20" y="20" height="60%" width="60%" text-anchor="middle" dy="7" class="text-center"></foreignObject>
+                        </svg>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5">Sample 3</div>
+                </div>
+
+                <div class="grid-center">
+                    <div id="4" class="mybox radial rate-point plans calibri bold font16">
+                        <div class="theme-8">
+                            <svg id="animated" class='' data-toggle="class" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle class='no-fill' cx="50" cy="50" r="45"/>
+                            <item data-func="prodata" 
+                                    data-mark="1000" data-start="0" data-end="700" 
+                                    data-time="5000" data-unit='kg'  data-angle="0"
+                                    data-label="<span class='mybox-full font8 font-all'> in 1000kg </span>"
+                                    data-bkpoints="0 20 50 70 100"
+                                    data-bkclass ="low normal medium high complete"
+                                    data-bkcolors="rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgb(207,204,4) rgba(102,45,45,0.5)">
+                            </item>
+                            <path id="1" class="bar6 cap-round" data-func="progressbar" stroke-linecap="round" stroke-dasharray="0,251.36264038085938" stroke-width="1" d="M50 10 a 30 30 0 0 1 0 80 a 30 30 0 0 1 0 -80">
+                            </path>
+                            <foreignObject data-func="protext" x="20" y="20" height="65%" width="60%" text-anchor="middle" dy="7" class="text-center"></foreignObject>
+                        </svg>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5">Sample 4</div>
+                </div>
+
+                <div class="grid-center">
+                    <div id="5" class="mybox radial rate-point plans calibri bold font16">
+                        <div class="theme-11">
+                            <svg id="animated" class='' data-toggle="class" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle class='no-fill' cx="50" cy="50" r="45"/>
+                            <item data-func="prodata" 
+                                    data-mark="100" data-start="0" data-end="50" data-split 
+                                    data-time="5000" data-unit='%'  data-angle="60" data-mirror="x"
+                                    data-label="<span class='mybox-full font8 font-all'> Rate Bar </span>"
+                                    data-bkpoints="0 20 50 70 100"
+                                    data-bkclass ="low normal medium high complete"
+                                    data-bkcolors="rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgb(207,204,4) rgba(102,45,45,0.5)">
+                            </item>
+                            <path id="1" class="no-fill bar6 cap-round" data-func="progressbar" stroke-linecap="round" stroke-dasharray="0,251.36264038085938" stroke-width="1" d="M50 10 a 30 30 0 0 1 0 80 a 30 30 0 0 1 0 -80">
+                            </path>
+                            <foreignObject data-func="protext" x="20" y="20" height="60%" width="60%" text-anchor="middle" dy="7" class="text-center"></foreignObject>
+                        </svg>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5">Sample 5</div>
+                </div>
+
+                <div class="grid-center">
+                    <div id="6" class="mybox radial rate-point plans calibri bold font16">
+                        <div class="theme-5">
+                            <svg id="animated" class='' data-toggle="class" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle class='no-fill' cx="50" cy="50" r="45"/>
+                            <item data-func="prodata" data-run="auto" data-self="4000"
+                                    data-mark="100" data-start="0" data-end="40" 
+                                    data-time="5000" data-unit='%'  data-angle="60"
+                                    data-label="<span class='mybox-full font8 font-all'> Auto Update </span>"
+                                    data-bkpoints="0 20 50 70 100"
+                                    data-bkclass ="low normal medium high complete"
+                                    data-bkcolors="rgba(102,45,45) rgba(102,45,45,0.5) rgba(102,45,45,0.5) rgb(207,204,4) rgba(102,45,45,0.5)">
+                            </item>
+                            <path id="1" class="no-fill bar6 cap-round" data-func="progressbar" stroke-linecap="round" stroke-dasharray="0,251.36264038085938" stroke-width="1" d="M50 10 a 30 30 0 0 1 0 80 a 30 30 0 0 1 0 -80">
+                            </path>
+                            <foreignObject data-func="protext" x="20" y="20" height="60%" width="60%" text-anchor="middle" dy="7" class="text-center"></foreignObject>
+                        </svg>
+                        </div>
+                    </div>
+                    <div class="mybox-full text-center font-em-1d5">Sample 6</div>
+                </div>
+
+            </div>
+
+            <div class="grid-center">
+                <span class="font12" style="color:black">
+                Auto Update Sample:
+                <br> 
+                <fieldset class="i-flex">
+                    <input class="flex-child padd-x-10" id="newvalue" type="" name=""> 
+                </fieldset>
+
+                <fieldset class="i-flex padd-x-10 bc bc-red-dd bh-lime-dd anc-btn-link" style="border:none;">
+                    <input class="flex-btn c-white" id="update" type="button" value="Auto Update" name=""> 
+                </fieldset>
+                
+                
+                <br>
+                Note: (value must be between 1-100 or 1 - data-mark)
+            </span>
+            </div>
+        </div>
+
+        <script src="js/ratePoint.js"></script>
+        <script>
+            setTimeout(() => {
+                autoRatePoint(); //initialize ratepointer
+            }, 1500);
+
+            //auto update sample 1 on interval basis
+            let datas = [10, 50, 30, 70, 45, 10];
+            i = 0;
+            instance = 0;
+            elem = "#1"
+            setInterval(function() {
+                let path = $(elem).find("path"),
+                    prodata = $(elem).find("[data-func='prodata']");
+                //dataStart = (dataStart / dataMark) * 100;
+                dataStart = path.attr('data-point') ? $(elem).find("path").attr('data-point') : 0;
+                dataMark = prodata.attr('data-mark');
+                dataStop = datas[i];
+                prodata.attr({
+                    "data-start": dataStart,
+                    "data-end": dataStop
+                });
+                console.log(dataStart)
+                setTimeout(function() {
+                    autoRatePoint("#1")
+                }, 200);
+                if (i == datas.length) {
+                    i = 0;
+                    instance = 0;
+                }
+                i++;
+                instance = 1;
+            }, 10000)
+
+
+            //Auto update sample (6) on click basis
+            $("#update").click(function() {
+                var newvalue = $("#newvalue").val();
+
+                if (newvalue < 0) {
+                    newvalue = 0;
+                }
+
+                newvalue = parseInt(newvalue);
+
+                $("#6.radial").find("[data-func='prodata']").attr({
+                    "data-newpoint": newvalue
+                });
+
+            })
+        </script>
+</body>
+
+</html>
